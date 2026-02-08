@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Portfolio</title>
+
+    <!-- Font Awesome CDN (put it here) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+body{margin: 0;font-family: Arial;}
+        header{background-color: #00183d;color: white;padding: 20px;text-align: center;position: relative;top: 0;width: 100%;box-sizing: border-box;}
+        .nav-btn{background-color: #72a5e9; color:white; padding: 10px 16px; text-decoration:none; border-radius:5px; font-weight: bold;margin: 0 6px;display: inline-block}
+        .nav-btn:hover{background-color: #003ec4}
+        nav{display: flex;justify-content: center;gap: 15px;margin-top: 10px}
+        nav button{padding: 8px 16px;border: none;background-color: #ffffff;color: #003b36;cursor: pointer;border-radius: 5px;font-weight: bold}
+        nav button:hover{background-color: #ddd}
+        section{max-width: 900px;margin:40px auto;padding: 20px;background-color: #f4f4f4;border-radius: 8px;text-align: center;}
+        main{max-width: 1100px;margin:0 auto;padding: 20px;}
+        .card{background-color:#38525c;margin: 30px auto;padding: 15px;width: 100%;border-radius: 10px;box-shadow:  0 4px 10px rgba(0,0,0,0.1);}
+        form{display: inline-block;text-align: left;margin: 0 auto;color: white;}
+        *{box-sizing: border-box;}
+        .submit-btn{background-color: rgb(0, 103, 134);color: white;padding: 10px 25px;border: none;border-radius: 5px;cursor: pointer;display: block;margin: 15px auto;
+}
+    .submit-btn:hover{background-color: rgb(2, 2, 184);}
+    h2,h3,p{color: white;margin: auto;padding: 15px;text-align: center;}
+    a{color: white;}
+    img{width: 300px;}
+    .project-item{text-align: left; padding: 5px 0;}
+    html{scroll-behavior: smooth;}
+</style>
+
+</head>
+<body>
+    <header> 
+        <h1>Welcome To My Portfolio</h1>
+        <nav aria-label="Main Navigation">
+        <a href="#about" class="nav-btn">About</a>
+        <a href="#skills" class="nav-btn">Skills</a>
+        <a href="#projects" class="nav-btn">Projects</a>
+        <a href="#contact" class="nav-btn">Contact</a>
+        </nav>
+    </header>
+    <main
+        class="container">
+        <section
+        id="about" class="card">
+        <h2>About</h2>
+        <img src="my-photo.jpg" alt="My Image">
+        <p>Hi, I’m [Abhiram],<br>
+        a passionate web developer with hands-on experience in building responsive websites using HTML, CSS, and beginner JavaScript. I have completed projects like a church website and this portfolio, where I applied my skills to create interactive and user-friendly pages. I am eager to start my career in an IT company as a frontend developer, contribute to real projects, and continue growing my skills. I enjoy learning new technologies and solving problems through coding.</p>
+        </section>
+        <section
+        id="skills" class="card">
+            <h2>Skills</h2>
+            <p><b>•HTML</b>: Strong — Built complete web pages with headings, tables, lists, and forms.<br>
+ <b>•CSS</b>: Entering Advanced — Responsive layouts, styling, colors, and positioning.<br>
+ <b>•JavaScript</b>: Beginner — Form validation, interactive buttons, simple logic.<br>
+ <b>•Git / GitHub</b>: Beginner — Version control, project management.<br>
+ <b>•Problem Solving</b>: Beginner — Debugging, logical thinking, small scripts.
+</p>
+        </section>
+        <section id="projects" class="card">
+    <h2>Projects</h2>
+
+    <div class="project-item">
+        <h3>Church Website</h3><br>
+        <p>
+            Built a responsive Church website using <b>HTML, CSS, and JavaScript</b>. 
+            Features include multiple pages, navigation menus, image galleries, 
+            and interactive forms for user communication. Focused on creating a 
+            user-friendly interface and responsive layout for both desktop and mobile devices.
+        </p><br>
+        <p>
+    <a href="https://github.com/abhiramnune321-star/tcm-official-website" target="_blank"
+       style="padding:8px 12px; background-color:#24292e; color:white; text-decoration:none; border-radius:5px; margin-right:10px; display:inline-block;">
+        <i class="fab fa-github"></i> View on GitHub
+   </a>
+</p>
+        <p><b>Skills Used:</b> HTML (Strong), CSS (Advanced), JavaScript (Beginner)</p>
+        <p><b>What I Learned:</b> Responsive design, working with layouts, adding interactivity, linking multiple pages,<br>and improving UI/UX for visitors.</p>
+    </div>
+
+</section>
+        <section
+        id="contact" class="card">
+        <h2>Contact Me</h2>
+       <p>Feel Free to ask me by leaving your details Here</p>
+        <form id="contactForm">
+        <p id="formMessage" style="display:none; color:green; font-weight:bold;">
+            We will contact you soon 🙏
+        </p>
+
+        <fieldset>
+            <legend>Contact Details</legend>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter Your Name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email" required><br>
+
+            <label for="mobile">Mobile:</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="Enter Your 10 digit Mobile Number"
+                   pattern="[0-9]{10}" required><br>
+
+            <button type="button" class="submit-btn" id="submitBtn">Submit</button>
+        </fieldset>
+    </form>
+    </section>
+    </main>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.getElementById("contactForm");
+    const btn = document.getElementById("submitBtn");
+    const message = document.getElementById("formMessage");
+
+    btn.addEventListener("click", function () {
+
+        btn.textContent = "Submitted ✔";
+        btn.disabled = true;
+        btn.style.backgroundColor = "green";
+
+        message.style.display = "block";
+
+        form.reset();
+    });
+
+});
+</script>
+
+    
+</body>
+</html>
